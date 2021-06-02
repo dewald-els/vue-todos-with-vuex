@@ -1,28 +1,39 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <main id="app">
+    <Navbar/>
+    <div class="container">
+      <router-view></router-view>
+    </div>
+  </main>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Navbar from "./Navbar/Navbar.vue";
+import {mapState} from "vuex";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    Navbar,
+  },
+  computed: {
+    ...mapState(['profile'])
+  },
+  watch: {
+    profile(current) {
+      if (current === '') {
+        this.$router.push('/login')
+      }
+    }
+  },
+  beforeCreate() {
+    console.log("App.beforeCreate()");
+  },
+  created() {
+    console.log("App.created()");
+  },
+  mounted() {
+    console.log("App.mounted()");
+  },
+};
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

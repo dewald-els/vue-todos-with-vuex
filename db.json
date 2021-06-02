@@ -1,0 +1,28 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "title": "🥛 Buy Milk",
+      "description": "Fresh full cream milk",
+      "completed": false
+    },
+    {
+      "id": 2,
+      "title": "🥛 Learn Vue",
+      "description": "Learn about Vue, Vue Router and Vuex ",
+      "completed": false
+    },
+    {
+      "id": 3,
+      "title": "🐶 Take Oliver for a walk",
+      "description": "He gets grumpy when he doesnt walk",
+      "completed": true
+    },
+    {
+      "id": 4,
+      "title": "😴 Take Friday nap",
+      "description": "Fridays are for being lazy!",
+      "completed": false
+    }
+  ]
+}
