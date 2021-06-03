@@ -1,7 +1,7 @@
 <template>
   <nav class="nav">
     <ul class="navbar">
-      <li class="navbar-item">Another Todos App</li>
+      <li class="navbar-item navbar-brand">Another Todos App</li>
     </ul>
     <ul class="navbar right" v-if="profile">
 
@@ -34,6 +34,7 @@ export default {
 </script>
 
 <style>
+
 .nav {
   display: flex;
   background-color: rgb(10, 132, 255);
@@ -47,6 +48,11 @@ export default {
   display: flex;
   list-style-type: none;
   align-items: center;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.15em;
 }
 
 .navbar-item {
@@ -70,5 +76,6 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: .9em;
 }
 </style>

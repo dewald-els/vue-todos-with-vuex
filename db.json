@@ -4,7 +4,7 @@
       "id": 1,
       "title": "🥛 Buy Milk",
       "description": "Fresh full cream milk",
-      "completed": false
+      "completed": true
     },
     {
       "id": 2,
@@ -23,6 +23,18 @@
       "title": "😴 Take Friday nap",
       "description": "Fridays are for being lazy!",
       "completed": false
+    },
+    {
+      "title": "📝 Create a todo",
+      "description": "Create a todo with the create form ",
+      "completed": false,
+      "id": 5
+    },
+    {
+      "title": "👨🏻‍🏫 Slides for React Introduction",
+      "description": "Create some basic slides for the React introduction module",
+      "completed": false,
+      "id": 6
     }
   ]
 }

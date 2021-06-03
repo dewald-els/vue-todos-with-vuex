@@ -34,6 +34,12 @@ const routes = [ // Route Configuration
         beforeEnter: routeLoginGuard
     },
     {
+        path: '/create',
+        name: 'CreateTodo',
+        component: () => import(/* webpackChunkName: "create-todo" */ './TodoCreate/TodoCreate'),
+        beforeEnter: routeLoginGuard
+    },
+    {
         path: '/todos/:id',
         name: 'TodoDetail',
         component: () => import(/* webpackChunkName: "todo-detail" */ './TodoDetail/TodoDetail.vue'),

@@ -1,6 +1,10 @@
 html, body {
     margin: 0;
     padding: 0;
+
+}
+
+html, body, input, textarea, select {
     font-family: -apple-system, Arial, Oxygen, sans-serif;
 }
 
@@ -12,4 +16,10 @@ html, body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1.5em;
+}
+
+fieldset {
+    border: none;
+    padding: 0;
+    margin-bottom: 1em;
 }
