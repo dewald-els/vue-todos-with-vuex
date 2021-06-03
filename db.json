@@ -8,7 +8,7 @@
     },
     {
       "id": 2,
-      "title": "🥛 Learn Vue",
+      "title": "📖 Learn Vue",
       "description": "Learn about Vue, Vue Router and Vuex ",
       "completed": false
     },
@@ -16,7 +16,7 @@
       "id": 3,
       "title": "🐶 Take Oliver for a walk",
       "description": "He gets grumpy when he doesnt walk",
-      "completed": true
+      "completed": false
     },
     {
       "id": 4,
