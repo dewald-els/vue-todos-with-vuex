@@ -16,7 +16,9 @@ export const initialiseStore = store => {
 export default new Vuex.Store({
     state: {
         profile: '',
-        todos: []
+        todos: [],
+        uiLoading: false,
+        error: ''
     },
     mutations: {
         setProfile: (state, payload) => {
@@ -31,6 +33,12 @@ export default new Vuex.Store({
         toggleTodoComplete: (state, payload) => {
             const updateTodoIdx = state.todos.findIndex(todo => todo.id === payload)
             state.todos[updateTodoIdx].completed = !state.todos[updateTodoIdx].completed
+        },
+        setUiLoading: (state, payload) => {
+            state.uiLoading = payload
+        },
+        setError: (state, payload) => {
+            state.error = payload
         }
     },
     getters: {
@@ -52,7 +60,7 @@ export default new Vuex.Store({
                 commit('setProfile', payload)
             }, 500)
         },
-        logoutUser({ commit }) {
+        logoutUser({commit}) {
             sessionStorage.removeItem(KEY_SESSION_USERNAME)
             commit('setProfile', '')
         },
@@ -78,5 +86,21 @@ export default new Vuex.Store({
                 console.log(error.message)
             }
         },
+        async createTodo({commit}, payload) {
+            try {
+                commit('setUiLoading', true)
+                const response = await fetch('http://localhost:3000/todos', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify(payload)
+                })
+                const newTodo = await response.json()
+                commit('addTodo', newTodo)
+            } catch (error) {
+                commit('setError', error.message)
+            } finally {
+                commit('setUiLoading', false)
+            }
+        }
     }
 })

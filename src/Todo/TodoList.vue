@@ -1,6 +1,13 @@
 <template>
   <section id="todo-list">
-    <h4>Things todo</h4>
+    <header>
+      <h4>Things todo</h4>
+      <aside class="create-todo-link">
+        <router-link role="button" to="/create">Add a todo &plus;</router-link>
+      </aside>
+
+    </header>
+
 
     <TodoListItem
       v-for="todo in incompleteTodos"
@@ -42,3 +49,20 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.create-todo-link a {
+  color: white;
+  background-color: rgb(10, 132, 255);
+  text-decoration: none;
+  border: solid 1px rgb(8, 105, 203);;
+  padding: .5em;
+  border-radius: 5px;
+  font-size: .9em;
+}
+</style>
